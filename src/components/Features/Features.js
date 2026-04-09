@@ -3,185 +3,141 @@ import './Features.css';
 
 const tabs = [
   {
-    id: 'training',
-    label: 'Gamified Training',
+    id: 'device-code',
+    label: 'Device Code Phishing',
     icon: (
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/>
+        <rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>
       </svg>
     ),
-    heading: 'Drive Behaviour Change Through Gamification',
+    heading: 'OAuth Device Code Phishing at Scale',
     description:
-      'Employees learn best when training is fun and rewarding. Our gamified platform uses points, badges, and leaderboards to boost engagement and create lasting security habits.',
+      'Initiate OAuth 2.0 device code flows, capture live access tokens, and enumerate Entra ID / Microsoft Graph targets. Pre-configured client app presets for Azure CLI, MS Office, Teams, and OneDrive — ready to deploy in seconds.',
     features: [
-      { icon: '🏆', title: '20+ Achievement Badges', desc: 'Reward employees as they complete training milestones.' },
-      { icon: '📊', title: 'Live Leaderboards', desc: 'Foster healthy competition across teams and departments.' },
-      { icon: '📚', title: '50 Micro-Learning Modules', desc: 'Bite-sized lessons covering every key security topic.' },
-      { icon: '🌐', title: 'Multi-Language Support', desc: 'Train your global workforce in their native language.' },
+      {
+        color: '#dc2626',
+        icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>,
+        title: 'Multi-Client App Presets',
+        desc: 'Azure CLI, Azure PowerShell, MS Office, MS Teams, OneDrive Sync and more — one click to configure.',
+      },
+      {
+        color: '#7c3aed',
+        icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg>,
+        title: 'Token Vault',
+        desc: 'Captured access tokens are stored automatically, ready for Graph enumeration and lateral movement.',
+      },
+      {
+        color: '#0891b2',
+        icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M1 6c0 0 4-2 11-2s11 2 11 2"/><path d="M5 10c0 0 3-1.5 7-1.5S19 10 19 10"/><path d="M8.5 14c0 0 1.5-1 3.5-1s3.5 1 3.5 1"/><circle cx="12" cy="18" r="1"/></svg>,
+        title: 'Live Auth Polling',
+        desc: 'Real-time status tracking — see the moment a target authenticates with the device code.',
+      },
+      {
+        color: '#f59e0b',
+        icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>,
+        title: 'Phishing Lure Templates',
+        desc: 'Pre-built lures: IT Helpdesk, MFA Re-enrollment, Microsoft 365 License, and Shared Document.',
+      },
     ],
-    mockup: 'training',
+    img: `${process.env.PUBLIC_URL}/screenshot-device-code.png`,
+    alt: 'Device Code Phishing — OAuth 2.0 flow configuration and token capture',
   },
   {
-    id: 'phishing',
-    label: 'Phishing Simulation',
+    id: 'c2',
+    label: 'C2 Infrastructure',
     icon: (
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-        <polyline points="22,6 12,13 2,6"/>
+        <rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/>
+        <line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/>
       </svg>
     ),
-    heading: 'Run Realistic Multi-Channel Phishing Campaigns',
+    heading: 'One-Click C2 Infrastructure Deployment',
     description:
-      'Test your employees with real-world phishing simulations across email, voice, and conversational channels. Identify vulnerable users and automatically enrol them in targeted training.',
+      'Provision and manage C2 nodes via Terraform + Docker across DigitalOcean, AWS EC2, and Vultr — all without leaving the platform. Full lifecycle management: deploy, monitor active nodes, and destroy infrastructure when the op is done.',
     features: [
-      { icon: '📧', title: 'Email Phishing', desc: 'Hundreds of customisable phishing email templates.' },
-      { icon: '📞', title: 'Voice Phishing (Vishing)', desc: 'Simulate phone-based social engineering attacks.' },
-      { icon: '💬', title: 'SMS & Chat Phishing', desc: 'Test employees across modern communication channels.' },
-      { icon: '🎯', title: 'Smart Auto-Enrolment', desc: 'Auto-enrol clickers into remedial training instantly.' },
+      {
+        color: '#0891b2',
+        icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>,
+        title: 'Multi-Cloud Support',
+        desc: 'Deploy to DigitalOcean, AWS EC2, or Vultr VPS with provider-specific infrastructure templates.',
+      },
+      {
+        color: '#2563eb',
+        icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>,
+        title: 'Terraform + Docker Automation',
+        desc: 'Infrastructure-as-code under the hood — reproducible, auditable deployments every time.',
+      },
+      {
+        color: '#10b981',
+        icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>,
+        title: 'Live Node Status',
+        desc: 'Monitor running, in-progress, and destroyed nodes with real-time status updates per deployment.',
+      },
+      {
+        color: '#dc2626',
+        icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>,
+        title: 'Tied to Active Engagements',
+        desc: 'Every deployment is scoped to an operation — keeping infrastructure and ops aligned.',
+      },
     ],
-    mockup: 'phishing',
+    img: `${process.env.PUBLIC_URL}/screenshot-c2.png`,
+    alt: 'C2 Infrastructure — Terraform + Docker node deployment and management',
   },
   {
-    id: 'reporting',
-    label: 'Reporting & Analytics',
+    id: 'engagement',
+    label: 'Engagement Tracking',
     icon: (
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <line x1="18" y1="20" x2="18" y2="10"/>
-        <line x1="12" y1="20" x2="12" y2="4"/>
-        <line x1="6"  y1="20" x2="6"  y2="14"/>
+        <line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/>
       </svg>
     ),
-    heading: 'Real-Time Insights That Drive Measurable Results',
+    heading: 'Full Engagement Lifecycle Management',
     description:
-      'Turn security awareness data into actionable intelligence. Track individual and organisational risk scores, monitor campaign outcomes, and generate compliance-ready reports.',
+      'Track every active operation from Recon to Done. Manage findings by severity, assign operators, and monitor progress through the kill-chain — with an integrated TTX planner, loot tracker, evidence vault, and cleanup tracker all under one workspace.',
     features: [
-      { icon: '📈', title: 'Risk Score Tracking', desc: 'Quantify employee and team risk with live dashboards.' },
-      { icon: '🔔', title: 'Automated Alerts', desc: 'Get notified when employees fail phishing tests.' },
-      { icon: '📄', title: 'Compliance Reports', desc: 'One-click reports for ISO 27001, GDPR & more.' },
-      { icon: '🔗', title: 'SIEM Integrations', desc: 'Push events to Splunk, Microsoft Sentinel and more.' },
+      {
+        color: '#dc2626',
+        icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6"/></svg>,
+        title: 'Kill-Chain Progress Tracker',
+        desc: 'Visual progress bar across Preparing → Recon → Access → Post-Exploit → Reporting → Done.',
+      },
+      {
+        color: '#ef4444',
+        icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>,
+        title: 'Findings Management',
+        desc: 'Log Critical, High, Medium, and Low findings with full context and severity tracking.',
+      },
+      {
+        color: '#7c3aed',
+        icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>,
+        title: 'Multi-Operator Assignment',
+        desc: 'Assign multiple operators per engagement with live active status per team member.',
+      },
+      {
+        color: '#10b981',
+        icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>,
+        title: 'Integrated Op Workspace',
+        desc: 'Loot Tracker, Evidence Vault, Reverse Shells, CVE Research Board and Cleanup Tracker built in.',
+      },
     ],
-    mockup: 'reporting',
+    img: `${process.env.PUBLIC_URL}/screenshot-engagement.png`,
+    alt: 'Engagement Tracking — Operation Obsidian Phoenix findings and progress',
   },
 ];
 
-/* ── Feature-specific CSS mockups ─────────────────── */
-const TrainingMockup = () => (
-  <div className="features__mockup-inner">
-    <div className="feat-mock__top">
-      <span className="feat-mock__heading">My Training Progress</span>
-      <span className="feat-mock__score">Score: 2,450 pts</span>
-    </div>
-    <div className="feat-mock__badges-row">
-      {['🛡️', '🎯', '🔒', '📧', '🏆'].map((b, i) => (
-        <div key={i} className="feat-mock__badge">{b}</div>
-      ))}
-      <div className="feat-mock__badge feat-mock__badge--locked">🔐</div>
-      <div className="feat-mock__badge feat-mock__badge--locked">🔐</div>
-    </div>
-    <div className="feat-mock__leaderboard">
-      <div className="feat-mock__lb-header">Leaderboard — This Month</div>
-      {[
-        { rank: '🥇', name: 'Alice M.', pts: 3200 },
-        { rank: '🥈', name: 'Bob K.', pts: 2900 },
-        { rank: '🥉', name: 'You', pts: 2450, highlight: true },
-        { rank: '4', name: 'Dana R.', pts: 2100 },
-      ].map((row) => (
-        <div key={row.name} className={`feat-mock__lb-row ${row.highlight ? 'feat-mock__lb-row--you' : ''}`}>
-          <span>{row.rank}</span>
-          <span>{row.name}</span>
-          <span style={{ marginLeft: 'auto', fontWeight: 700 }}>{row.pts.toLocaleString()} pts</span>
-        </div>
-      ))}
-    </div>
-  </div>
-);
-
-const PhishingMockup = () => (
-  <div className="features__mockup-inner">
-    <div className="feat-mock__top">
-      <span className="feat-mock__heading">Campaign: Q2 Phishing Test</span>
-      <span className="feat-mock__status">● Live</span>
-    </div>
-    <div className="feat-mock__campaign-stats">
-      {[
-        { label: 'Sent', value: '1,240', color: '#3b82f6' },
-        { label: 'Opened', value: '856', color: '#f59e0b' },
-        { label: 'Clicked', value: '124', color: '#ef4444' },
-        { label: 'Reported', value: '312', color: '#10b981' },
-      ].map((s) => (
-        <div key={s.label} className="feat-mock__campaign-stat">
-          <div className="feat-mock__campaign-val" style={{ color: s.color }}>{s.value}</div>
-          <div className="feat-mock__campaign-lbl">{s.label}</div>
-        </div>
-      ))}
-    </div>
-    <div className="feat-mock__funnel">
-      {[
-        { label: 'Sent', width: '100%', color: '#3b82f6' },
-        { label: 'Opened 69%', width: '69%', color: '#f59e0b' },
-        { label: 'Clicked 10%', width: '30%', color: '#ef4444' },
-        { label: 'Trained 8%', width: '20%', color: '#10b981' },
-      ].map((row) => (
-        <div key={row.label} className="feat-mock__funnel-row">
-          <span className="feat-mock__funnel-lbl">{row.label}</span>
-          <div className="feat-mock__funnel-bar" style={{ width: row.width, background: row.color }} />
-        </div>
-      ))}
-    </div>
-  </div>
-);
-
-const ReportingMockup = () => (
-  <div className="features__mockup-inner">
-    <div className="feat-mock__top">
-      <span className="feat-mock__heading">Security Risk Dashboard</span>
-      <span className="feat-mock__badge-pill feat-mock__badge-pill--green">Low Risk</span>
-    </div>
-    <div className="feat-mock__risk-meter">
-      <div className="feat-mock__risk-arc">
-        <svg viewBox="0 0 120 70" width="180" height="100">
-          <path d="M10 60 A50 50 0 0 1 110 60" fill="none" stroke="#e2e8f0" strokeWidth="12" strokeLinecap="round"/>
-          <path d="M10 60 A50 50 0 0 1 110 60" fill="none" stroke="url(#rg)" strokeWidth="12" strokeLinecap="round" strokeDasharray="157" strokeDashoffset="60"/>
-          <defs>
-            <linearGradient id="rg" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="#10b981"/>
-              <stop offset="60%" stopColor="#f59e0b"/>
-              <stop offset="100%" stopColor="#ef4444"/>
-            </linearGradient>
-          </defs>
-          <text x="60" y="58" textAnchor="middle" fill="#0f172a" fontSize="18" fontWeight="800">24</text>
-          <text x="60" y="68" textAnchor="middle" fill="#94a3b8" fontSize="7">RISK SCORE</text>
-        </svg>
-      </div>
-    </div>
-    <div className="feat-mock__metrics">
-      {[
-        { label: 'Phishing Resistance', val: 92, color: '#10b981' },
-        { label: 'Training Coverage', val: 87, color: '#3b82f6' },
-        { label: 'Reporting Rate', val: 74, color: '#7c3aed' },
-      ].map((m) => (
-        <div key={m.label} className="feat-mock__metric">
-          <div className="feat-mock__metric-top">
-            <span>{m.label}</span>
-            <span style={{ color: m.color, fontWeight: 700 }}>{m.val}%</span>
-          </div>
-          <div className="feat-mock__metric-bar">
-            <div className="feat-mock__metric-fill" style={{ width: `${m.val}%`, background: m.color }} />
-          </div>
-        </div>
-      ))}
-    </div>
-  </div>
-);
-
-const mockups = {
-  training: <TrainingMockup />,
-  phishing: <PhishingMockup />,
-  reporting: <ReportingMockup />,
-};
-
 const Features = () => {
-  const [active, setActive] = useState('training');
+  const [active, setActive] = useState('device-code');
+  const [animating, setAnimating] = useState(false);
+
+  const handleTab = (id) => {
+    if (id === active) return;
+    setAnimating(true);
+    setTimeout(() => {
+      setActive(id);
+      setAnimating(false);
+    }, 180);
+  };
+
   const tab = tabs.find((t) => t.id === active);
 
   return (
@@ -194,12 +150,12 @@ const Features = () => {
             Platform Features
           </div>
           <h2 className="section-title">
-            Everything You Need to{' '}
-            <span className="text-gradient">Defend Your People</span>
+            Everything You Need for a{' '}
+            <span className="text-gradient">Red Team Engagement</span>
           </h2>
           <p className="section-subtitle">
-            From initial awareness to measurable behaviour change — CanIPhish
-            covers every step of the security awareness journey.
+            RedTeamCenter is more than an engagement management platform — it's a
+            fully integrated offensive operations hub built for modern red teams.
           </p>
         </div>
 
@@ -209,7 +165,7 @@ const Features = () => {
             <button
               key={t.id}
               className={`features__tab ${active === t.id ? 'features__tab--active' : ''}`}
-              onClick={() => setActive(t.id)}
+              onClick={() => handleTab(t.id)}
             >
               {t.icon}
               {t.label}
@@ -218,15 +174,20 @@ const Features = () => {
         </div>
 
         {/* Tab content */}
-        <div className="features__content">
-          {/* Left */}
+        <div className={`features__content ${animating ? 'features__content--out' : 'features__content--in'}`}>
+          {/* Left: copy */}
           <div className="features__copy">
             <h3 className="features__copy-title">{tab.heading}</h3>
             <p className="features__copy-desc">{tab.description}</p>
             <div className="features__list">
               {tab.features.map((f) => (
                 <div key={f.title} className="features__item">
-                  <div className="features__item-icon">{f.icon}</div>
+                  <div
+                    className="features__item-icon"
+                    style={{ background: `${f.color}15`, color: f.color }}
+                  >
+                    {f.icon}
+                  </div>
                   <div>
                     <div className="features__item-title">{f.title}</div>
                     <div className="features__item-desc">{f.desc}</div>
@@ -240,10 +201,14 @@ const Features = () => {
             </a>
           </div>
 
-          {/* Right: mockup */}
+          {/* Right: screenshot */}
           <div className="features__visual">
-            <div className="features__mockup">
-              {mockups[active]}
+            <div className="features__mockup features__mockup--screenshot">
+              <img
+                src={tab.img}
+                alt={tab.alt}
+                className="features__screenshot-img"
+              />
             </div>
           </div>
         </div>

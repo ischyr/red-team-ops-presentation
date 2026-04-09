@@ -2,115 +2,72 @@ import './WhyChooseUs.css';
 
 const benefits = [
   {
-    icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/>
-      </svg>
-    ),
-    title: 'No Credit Card Required',
-    desc: 'Get started with a full-featured free plan. No payment details needed until you are ready to scale.',
+    icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>,
+    title: 'Full Engagement Lifecycle',
+    desc: 'Track ops from Recon to Done with kill-chain progress, findings management, operator assignment, and integrated TTX planning.',
+    color: '#dc2626',
+  },
+  {
+    icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>,
+    title: 'One-Click C2 Deployment',
+    desc: 'Provision C2 nodes on DigitalOcean, AWS EC2, or Vultr via Terraform + Docker — scoped to the active engagement.',
     color: '#2563eb',
   },
   {
-    icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-      </svg>
-    ),
-    title: 'SOC 2 Type II Certified',
-    desc: 'Enterprise-grade security you can trust. Your data is processed and stored to the highest standards.',
+    icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>,
+    title: 'Device Code Phishing',
+    desc: 'OAuth 2.0 device code flows with token vault, live auth polling, and Graph enumeration against Entra ID targets.',
     color: '#7c3aed',
   },
   {
-    icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/>
-        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-      </svg>
-    ),
-    title: 'GDPR Compliant',
-    desc: 'Regional data residency across 8 global locations. Full compliance with GDPR, CCPA, and local privacy laws.',
-    color: '#10b981',
-  },
-  {
-    icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-        <circle cx="9" cy="7" r="4"/>
-        <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-        <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-      </svg>
-    ),
-    title: 'Free for Up to 5 Users',
-    desc: 'Small teams can use CanIPhish for free, forever. Perfect for startups and SMBs just getting started.',
+    icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>,
+    title: 'MITRE ATT&CK Cheatsheets',
+    desc: 'Interactive kill-chain reference with tools, techniques, and copy-paste key commands for every phase of an engagement.',
     color: '#f59e0b',
   },
   {
-    icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
-      </svg>
-    ),
-    title: 'Real-Time Reporting',
-    desc: 'Live dashboards show you exactly where your organisation stands — no waiting for monthly batch reports.',
+    icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>,
+    title: 'Live CVE Intelligence',
+    desc: 'Real-time CVE feed powered by Shodan CVE DB with CVSS scoring, full descriptions, and per-engagement research boards.',
     color: '#ef4444',
   },
   {
-    icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
-        <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
-        <line x1="12" y1="22.08" x2="12" y2="12"/>
-      </svg>
-    ),
-    title: 'Seamless Integrations',
-    desc: 'Connect with Microsoft 365, Google Workspace, Okta, Slack, and your existing SIEM or SOAR platform.',
+    icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>,
+    title: 'Email & Domain Breach Lookup',
+    desc: 'Check accounts and domains against HaveIBeenPwned with cached results, breach history, and exposed data type breakdowns.',
+    color: '#10b981',
+  },
+  {
+    icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>,
+    title: 'Phishing & Recon Builders',
+    desc: 'Username generator, typosquat domains, wordlists, QR codes, ClickFix lures, Fake Teams messages, and redirector chains.',
     color: '#0ea5e9',
   },
   {
-    icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="12" cy="12" r="3"/>
-        <path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/>
-      </svg>
-    ),
-    title: 'Multi-Language Training',
-    desc: 'Deliver training in 20+ languages so every employee can learn in their native tongue.',
+    icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>,
+    title: 'Pillaging & Recon Suite',
+    desc: 'Subdomain enum, webserver probing, domain flyover, network scanning, BloodHound analysis, and file metadata extraction.',
     color: '#8b5cf6',
-  },
-  {
-    icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-        <polyline points="22,6 12,13 2,6"/>
-      </svg>
-    ),
-    title: 'Automated Campaigns',
-    desc: 'Schedule recurring phishing campaigns and training reminders — set it and let the platform do the work.',
-    color: '#06b6d4',
   },
 ];
 
 const WhyChooseUs = () => (
   <section className="why section">
     <div className="container">
-      {/* Header */}
       <div className="why__header text-center">
         <div className="section-tag">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M9 12l2 2 4-4"/><path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-          Why CanIPhish
+          Why RedTeamCenter
         </div>
         <h2 className="section-title">
-          Built for Security Teams{' '}
+          Built for Red Teams{' '}
           <span className="text-gradient">of All Sizes</span>
         </h2>
         <p className="section-subtitle mx-auto" style={{ textAlign: 'center' }}>
-          From 5-person startups to Fortune 500 enterprises — CanIPhish scales
-          with you and delivers results from day one.
+          From solo operators to enterprise red teams — every tool you need for a modern offensive engagement, in one platform.
         </p>
       </div>
 
-      {/* Benefits grid */}
       <div className="why__grid">
         {benefits.map((b) => (
           <div key={b.title} className="why__card">

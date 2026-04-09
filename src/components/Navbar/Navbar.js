@@ -130,43 +130,16 @@ const Navbar = () => {
             {activeMenu === 'Platform' && <DropdownMenu items={platformItems} />}
           </li>
 
-          {/* Free Tools */}
-          <li
-            className="navbar__item navbar__item--has-dropdown"
-            onMouseEnter={() => setActiveMenu('FreeTools')}
-            onMouseLeave={() => setActiveMenu(null)}
-          >
-            <button className="navbar__link">
-              Free Tools
-              <svg className={`navbar__chevron ${activeMenu === 'FreeTools' ? 'navbar__chevron--up' : ''}`} width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M6 9l6 6 6-6"/></svg>
-            </button>
-            {activeMenu === 'FreeTools' && <DropdownMenu items={freeToolItems} isWide />}
-          </li>
-
           {navLinks.map((link) => (
             <li key={link.label} className="navbar__item">
               <a href={link.href} className="navbar__link">{link.label}</a>
             </li>
           ))}
-
-          {/* Resources */}
-          <li
-            className="navbar__item navbar__item--has-dropdown"
-            onMouseEnter={() => setActiveMenu('Resources')}
-            onMouseLeave={() => setActiveMenu(null)}
-          >
-            <button className="navbar__link">
-              Resources
-              <svg className={`navbar__chevron ${activeMenu === 'Resources' ? 'navbar__chevron--up' : ''}`} width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M6 9l6 6 6-6"/></svg>
-            </button>
-            {activeMenu === 'Resources' && <DropdownMenu items={resourceItems} />}
-          </li>
         </ul>
 
         {/* Auth Buttons */}
         <div className="navbar__auth">
-          <a href="#" className="btn btn-secondary btn-sm">Log in</a>
-          <a href="#" className="btn btn-primary btn-sm">Free sign up</a>
+          <a href="#" className="btn btn-primary btn-sm">Register to Newsletter</a>
         </div>
 
         {/* Mobile Hamburger */}
@@ -184,7 +157,6 @@ const Navbar = () => {
         <div className="navbar__mobile">
           {[
             { label: 'Platform', items: platformItems },
-            { label: 'Free Tools', items: freeToolItems },
           ].map(({ label, items }) => (
             <div key={label} className="navbar__mobile-group">
               <button
@@ -205,12 +177,11 @@ const Navbar = () => {
               )}
             </div>
           ))}
-          {[...navLinks, { label: 'Resources', href: '#' }].map((link) => (
+          {navLinks.map((link) => (
             <a key={link.label} href={link.href || '#'} className="navbar__mobile-link">{link.label}</a>
           ))}
           <div className="navbar__mobile-auth">
-            <a href="#" className="btn btn-secondary" style={{ justifyContent: 'center' }}>Log in</a>
-            <a href="#" className="btn btn-primary" style={{ justifyContent: 'center' }}>Free sign up</a>
+            <a href="#" className="btn btn-primary" style={{ justifyContent: 'center' }}>Register to Newsletter</a>
           </div>
         </div>
       )}
