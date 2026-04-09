@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import './Navbar.css';
 
 const platformItems = [
@@ -54,8 +55,8 @@ const resourceItems = [
 
 const navLinks = [
   { label: 'Pricing', href: '/pricing' },
-  { label: 'Partners', href: '#' },
-  { label: 'About', href: '#' },
+  { label: 'Partners', href: '/partners' },
+  { label: 'About', href: '/about' },
 ];
 
 const DropdownMenu = ({ items, isWide }) => (
@@ -106,33 +107,20 @@ const Navbar = () => {
     >
       <div className="container navbar__inner">
         {/* Logo */}
-        <a href="/" className="navbar__logo">
+        <Link to="/" className="navbar__logo">
           <svg width="34" height="34" viewBox="0 0 34 34" fill="none">
             <rect width="34" height="34" rx="9" fill="#dc2626"/>
             <path d="M17 6L8 10v7c0 5.25 3.85 10.15 9 11.35C22.15 27.15 26 22.25 26 17v-7L17 6z" fill="white" opacity="0.9"/>
             <path d="M14 17l2 2 4-4" stroke="#dc2626" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
           </svg>
           <span className="navbar__logo-text">RedTeamCenter</span>
-        </a>
+        </Link>
 
         {/* Desktop Menu */}
         <ul className="navbar__menu">
-          {/* Platform */}
-          <li
-            className="navbar__item navbar__item--has-dropdown"
-            onMouseEnter={() => setActiveMenu('Platform')}
-            onMouseLeave={() => setActiveMenu(null)}
-          >
-            <button className="navbar__link">
-              Platform
-              <svg className={`navbar__chevron ${activeMenu === 'Platform' ? 'navbar__chevron--up' : ''}`} width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M6 9l6 6 6-6"/></svg>
-            </button>
-            {activeMenu === 'Platform' && <DropdownMenu items={platformItems} />}
-          </li>
-
           {navLinks.map((link) => (
             <li key={link.label} className="navbar__item">
-              <a href={link.href} className="navbar__link">{link.label}</a>
+              <Link to={link.href} className="navbar__link">{link.label}</Link>
             </li>
           ))}
         </ul>
@@ -155,30 +143,8 @@ const Navbar = () => {
       {/* Mobile Drawer */}
       {mobileOpen && (
         <div className="navbar__mobile">
-          {[
-            { label: 'Platform', items: platformItems },
-          ].map(({ label, items }) => (
-            <div key={label} className="navbar__mobile-group">
-              <button
-                className="navbar__mobile-link navbar__mobile-link--toggle"
-                onClick={() => toggleMobileSection(label)}
-              >
-                {label}
-                <svg className={`navbar__chevron ${mobileExpanded === label ? 'navbar__chevron--up' : ''}`} width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M6 9l6 6 6-6"/></svg>
-              </button>
-              {mobileExpanded === label && (
-                <div className="navbar__mobile-sub">
-                  {items.map((item) => (
-                    <a key={item.label} href={item.href} className="navbar__mobile-sub-link">
-                      <span>{item.icon}</span> {item.label}
-                    </a>
-                  ))}
-                </div>
-              )}
-            </div>
-          ))}
           {navLinks.map((link) => (
-            <a key={link.label} href={link.href || '#'} className="navbar__mobile-link">{link.label}</a>
+            <Link key={link.label} to={link.href || '/'} className="navbar__mobile-link" onClick={() => setMobileOpen(false)}>{link.label}</Link>
           ))}
           <div className="navbar__mobile-auth">
             <a href="#" className="btn btn-primary" style={{ justifyContent: 'center' }}>Register to Newsletter</a>

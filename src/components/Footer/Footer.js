@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './Footer.css';
 
 const legalLinks = [
@@ -82,7 +83,7 @@ const Footer = () => (
         <span className="footer__copyright">© {new Date().getFullYear()} RedTeamCenter. All rights reserved.</span>
         <div className="footer__legal-links">
           {legalLinks.map((l) => (
-            <a key={l.label} href={l.href} className="footer__legal-link">{l.label}</a>
+            <Link key={l.label} to={l.href} className="footer__legal-link">{l.label}</Link>
           ))}
         </div>
       </div>

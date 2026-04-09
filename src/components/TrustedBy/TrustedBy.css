@@ -15,15 +15,17 @@
 
 .trusted__track-wrap {
   overflow: hidden;
-  mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+  max-width: 640px;
+  margin: 0 auto;
+  mask-image: linear-gradient(to right, transparent 0%, black 20%, black 80%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 20%, black 80%, transparent 100%);
 }
 
 .trusted__track {
   display: flex;
   align-items: center;
   gap: 0;
-  animation: marquee 28s linear infinite;
+  animation: marquee 12s linear infinite;
   width: max-content;
 }
 
