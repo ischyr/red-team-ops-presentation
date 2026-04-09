@@ -52,11 +52,11 @@ const Hero = () => {
           </p>
 
           <div className="hero__actions">
-            <a href="#" className="btn btn-white btn-lg hero__cta-primary">
-              Request access
+            <a href="https://github.com/ischyr/Red-Team-Operations-Center" target="_blank" rel="noreferrer" className="btn btn-white btn-lg hero__cta-primary">
+              Get Access
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </a>
-            <a href="#" className="btn btn-ghost-white btn-lg">
+            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" rel="noreferrer" className="btn btn-ghost-white btn-lg">
               Watch demo
             </a>
           </div>
@@ -70,7 +70,7 @@ const Hero = () => {
               ))}
             </div>
             <span className="hero__proof-text">
-              Used by <strong>500+ red team operators</strong> worldwide
+              Used by <strong>red team operators</strong> worldwide
             </span>
           </div>
 

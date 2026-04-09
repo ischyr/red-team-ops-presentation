@@ -98,6 +98,9 @@ const Partners = () => (
               <p className="section-subtitle" style={{ fontSize: 14 }}>
                 The people who helped build and shape RedTeamCenter.
               </p>
+              <p className="partners-leaderboard__note">
+                Everyone who contributes to improving the platform — whether through code, ideas, bug reports, or feature suggestions — will earn a card here. Your name, your work, permanently recognized in the project.
+              </p>
             </div>
 
             <div className="partners-grid">
