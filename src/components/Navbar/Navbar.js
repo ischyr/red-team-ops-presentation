@@ -53,7 +53,7 @@ const resourceItems = [
 ];
 
 const navLinks = [
-  { label: 'Pricing', href: '#' },
+  { label: 'Pricing', href: '/pricing' },
   { label: 'Partners', href: '#' },
   { label: 'About', href: '#' },
 ];

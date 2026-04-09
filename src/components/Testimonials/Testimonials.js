@@ -88,7 +88,7 @@ const Testimonials = () => (
         <h2 className="section-title testimonials__title">
           Trusted by Red Teams <span className="testimonials__title-highlight">Worldwide</span>
         </h2>
-        <p className="section-subtitle mx-auto" style={{ color: '#94a3b8', textAlign: 'center' }}>
+        <p className="section-subtitle mx-auto" style={{ color: 'rgba(255,255,255,0.85)', textAlign: 'center' }}>
           From solo operators to enterprise red teams — RedTeamCenter is the platform built for how modern offensive security actually works.
         </p>
       </div>
