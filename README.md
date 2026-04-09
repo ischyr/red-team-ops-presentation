@@ -1,70 +1,153 @@
-# Getting Started with Create React App
+# RedTeamCenter — Marketing Site
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> The public-facing landing page for **RedTeamCenter** — the all-in-one platform built for modern red team operators.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## What This Is
 
-### `npm start`
+This repo is the **marketing / presentation website** for the RedTeamCenter platform. It showcases the platform's capabilities, features, and operator stories — built entirely in React with no external UI libraries.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The actual RedTeamCenter application (engagement management, C2 infrastructure, device code phishing, CVE feed, etc.) lives in a separate repo.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## Stack
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+| Layer | Tech |
+|---|---|
+| Framework | React 19 (Create React App) |
+| Styling | Plain CSS — custom properties, CSS Grid, Flexbox |
+| Fonts | Inter via Google Fonts |
+| Animations | CSS keyframes + `requestAnimationFrame` |
+| Icons | Hand-crafted inline SVGs (no icon lib) |
+| Images | `public/` — drop your own screenshots in |
 
-### `npm run build`
+No Tailwind. No component library. No build config to fight with.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Sections
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+Navbar
+  └── Platform dropdown · Pricing · Partners · About · Register to Newsletter
 
-### `npm run eject`
+Hero
+  └── Dark red gradient · Browser-frame dashboard screenshot · Floating stat cards · Wave divider
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+TrustedBy
+  └── Logo trust strip
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Benchmark
+  └── 4 stat cards · Tabbed screenshot viewer (Cheatsheet / CVE Feed / Email Leaks)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Features
+  └── 3-tab showcase (Device Code Phishing / C2 Infrastructure / Engagement Tracking)
+      Each tab: copy panel + full screenshot with layered shadow
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Testimonials
+  └── Dark section matching Hero · 4 operator quotes · Wave dividers top + bottom
 
-## Learn More
+WhyChooseUs
+  └── 8-feature grid — full platform capability overview
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+CTASection
+  └── Red gradient · Email capture form
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Footer
+  └── Link columns · Social links · Legal
+```
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Getting Started
 
-### Analyzing the Bundle Size
+```bash
+# Install dependencies
+npm install
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+# Start dev server
+npm start
+```
 
-### Making a Progressive Web App
+Opens at `http://localhost:3000`.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
+## Adding Screenshots
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+The site uses real screenshots from the RedTeamCenter platform. Drop them in `public/` with these exact filenames:
 
-### Deployment
+| File | Used in |
+|---|---|
+| `dashboard.png` | Hero section — main browser mockup |
+| `screenshot-cheatsheet.png` | Benchmark → Cheatsheet tab |
+| `screenshot-cve.png` | Benchmark → CVE Feed tab |
+| `screenshot-email-leaks.png` | Benchmark → Email Leaks tab |
+| `screenshot-device-code.png` | Features → Device Code Phishing tab |
+| `screenshot-c2.png` | Features → C2 Infrastructure tab |
+| `screenshot-engagement.png` | Features → Engagement Tracking tab |
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+---
 
-### `npm run build` fails to minify
+## Project Structure
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```
+src/
+├── App.js                        # Root — assembles all sections
+├── index.css                     # Global CSS variables + base styles
+└── components/
+    ├── Navbar/                   # Sticky nav · Platform dropdown · CTA button
+    ├── Hero/                     # Full-bleed dark hero · screenshot · floating cards
+    ├── TrustedBy/                # Logo trust strip
+    ├── Benchmark/                # Stats + tabbed screenshot mockup
+    ├── Features/                 # 3-tab feature showcase with real screenshots
+    ├── Testimonials/             # Dark section · 4 operator quotes · wave dividers
+    ├── WhyChooseUs/              # 8-card platform feature grid
+    ├── CTASection/               # Email capture CTA
+    └── Footer/                   # Links · social · legal
+```
+
+---
+
+## Design System
+
+All design tokens live in `src/index.css` as CSS custom properties:
+
+```css
+--primary:       #dc2626   /* Red */
+--primary-dark:  #b91c1c
+--primary-light: #ef4444
+--dark:          #0f172a
+--white:         #ffffff
+--gray-200:      #e2e8f0
+--gray-500:      #64748b
+--radius:        8px
+--radius-lg:     12px
+--radius-xl:     16px
+--shadow-xl:     0 20px 60px rgba(0,0,0,0.12)
+--transition:    all 0.2s ease
+```
+
+The `Inter` font is loaded via Google Fonts in `public/index.html`.
+
+---
+
+## Key Design Decisions
+
+- **No emoji** — all icons are inline SVGs with contextual accent colors
+- **Wave dividers** — SVG path curves used at Hero bottom and Testimonials top/bottom to blend sections
+- **Real screenshots** — every feature tab and benchmark panel uses actual platform screenshots rather than CSS mockups
+- **Fade transitions** — tab switches in Benchmark and Features use a 200ms `translateY` + opacity animation for smoothness
+- **Dark hero / light body** — the site alternates between `#0a0a0a → #1a0505` dark sections (Hero, Testimonials) and `#f8fafc` light sections (Benchmark, Features, WhyChooseUs)
+
+---
+
+## Related
+
+- **RedTeamCenter App** — the actual platform (engagement management, C2, phishing, CVE feed, and much more)
+
+---
+
+*Built with React. Designed for operators.*
