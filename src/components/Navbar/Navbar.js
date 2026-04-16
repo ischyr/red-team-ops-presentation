@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import NewsletterModal from '../NewsletterModal/NewsletterModal';
 import './Navbar.css';
 
 const platformItems = [
@@ -78,6 +79,7 @@ const Navbar = () => {
   const [activeMenu, setActiveMenu] = useState(null);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileExpanded, setMobileExpanded] = useState(null);
+  const [newsletterOpen, setNewsletterOpen] = useState(false);
   const navRef = useRef(null);
 
   useEffect(() => {
@@ -127,7 +129,9 @@ const Navbar = () => {
 
         {/* Auth Buttons */}
         <div className="navbar__auth">
-          <a href="#" className="btn btn-primary btn-sm">Register to Newsletter</a>
+          <button type="button" className="btn btn-primary btn-sm" onClick={() => setNewsletterOpen(true)}>
+            Register to Newsletter
+          </button>
         </div>
 
         {/* Mobile Hamburger */}
@@ -147,10 +151,19 @@ const Navbar = () => {
             <Link key={link.label} to={link.href || '/'} className="navbar__mobile-link" onClick={() => setMobileOpen(false)}>{link.label}</Link>
           ))}
           <div className="navbar__mobile-auth">
-            <a href="#" className="btn btn-primary" style={{ justifyContent: 'center' }}>Register to Newsletter</a>
+            <button
+              type="button"
+              className="btn btn-primary"
+              style={{ justifyContent: 'center', width: '100%' }}
+              onClick={() => { setMobileOpen(false); setNewsletterOpen(true); }}
+            >
+              Register to Newsletter
+            </button>
           </div>
         </div>
       )}
+
+      <NewsletterModal open={newsletterOpen} onClose={() => setNewsletterOpen(false)} />
     </nav>
   );
 };
