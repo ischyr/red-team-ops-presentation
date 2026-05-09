@@ -52,7 +52,7 @@ const Hero = () => {
           </p>
 
           <div className="hero__actions">
-            <a href="https://github.com/ischyr/Red-Team-Operations-Center" target="_blank" rel="noreferrer" className="btn btn-white btn-lg hero__cta-primary">
+            <a href="https://github.com/ischyr/rt-operations-center" target="_blank" rel="noreferrer" className="btn btn-white btn-lg hero__cta-primary">
               Get Access
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </a>
